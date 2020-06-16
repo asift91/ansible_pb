@@ -26,6 +26,7 @@ linking_data_location() {
     sudo mkdir -p ${replica_data}/${wp_content}
     sudo ln -s ${replica_data}/${wp_content} ${replica_path}/${wp_content}
     sudo chmod 0755 ${replica_data}/${wp_content}
+    sudo chown -R www-data:www-data ${replica_data}/wp-content
 }
 update_nginx_configuration() {
     cd ${replica_bin}/
